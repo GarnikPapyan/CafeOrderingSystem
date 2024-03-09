@@ -27,7 +27,7 @@ public class Main {
                     boolean out2 = false;
                     while (!out2) {
                         System.out.print("\n");
-                        System.out.println("Here you can add, update or remove new products to the menu ");
+                        System.out.println("Here you can add, update or remove products to the menu ");
                         System.out.print("1. Add product to Menu \n");
                         System.out.print("2. Update product in Menu \n");
                         System.out.print("3. Remove product from menu \n");
