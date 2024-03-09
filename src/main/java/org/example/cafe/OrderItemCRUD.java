@@ -89,12 +89,14 @@ public class OrderItemCRUD {
         System.out.println("Enter order ID when you want to delete");
         while (!out){
             try{
-                Long order_id = scanner.nextLong();
-                Order order = session.get(Order.class,order_id);
+                Long orderId = scanner.nextLong();
+                Order order = session.get(Order.class,orderId);
                 if(order!=null){
                     session.remove(order);
-                    String hql = "DELETE FROM OrderItem WHERE order.id = :orderId";
-                    session.createQuery(hql).setParameter("orderId", order_id).executeUpdate();
+                    String hql = "DELETE FROM OrderItem WHERE order = :order";
+                    String sql = "DELETE FROM Billing WHERE order.orderId = :orderId";
+                    session.createQuery(hql).setParameter("order", order).executeUpdate();
+                    session.createQuery(sql).setParameter("orderId",orderId).executeUpdate();
                     out = true;
                 } else {
                     System.out.println("Enter valid ID");
