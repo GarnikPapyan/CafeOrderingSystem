@@ -1,15 +1,22 @@
-package org.example.cafe;
+package org.example.cafe.connection;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
+@ComponentScan(basePackages = "org.example.cafe")
 public class HibernateConfig {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
     // This method initializes and manages Hibernate configuration and services.
+    @Bean
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -36,6 +43,11 @@ public class HibernateConfig {
         }
         // Return the created or existing SessionFactory, allowing efficient sharing.
         return sessionFactory;
+    }
+
+    @Bean
+    public static Session getSession(){
+        return getSessionFactory().openSession();
     }
 
 }

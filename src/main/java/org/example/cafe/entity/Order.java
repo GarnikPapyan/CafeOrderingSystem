@@ -1,4 +1,4 @@
-package org.example.cafe;
+package org.example.cafe.entity;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

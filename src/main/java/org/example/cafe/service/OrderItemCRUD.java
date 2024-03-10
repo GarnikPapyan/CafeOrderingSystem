@@ -1,14 +1,17 @@
-package org.example.cafe;
+package org.example.cafe.service;
 
+import org.example.cafe.entity.OrderItem;
+import org.example.cafe.entity.MenuItem;
+import org.example.cafe.entity.Order;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
+@Service
 public class OrderItemCRUD {
-
     public void createOrder(Session session) {
         Transaction transaction = session.beginTransaction();
         Scanner scanner = new Scanner(System.in);
@@ -111,7 +114,6 @@ public class OrderItemCRUD {
 
     public void currentOrders(Session session){
         Transaction transaction =  session.beginTransaction();
-        Scanner scanner = new Scanner(System.in);
         String sql = "SELECT oi FROM OrderItem oi WHERE oi.order.isFinalized = false";
         List<OrderItem> lists = session.createQuery(sql,OrderItem.class).getResultList();
         for(OrderItem list: lists) {

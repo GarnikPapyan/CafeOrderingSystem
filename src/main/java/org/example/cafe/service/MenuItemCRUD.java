@@ -1,14 +1,15 @@
-package org.example.cafe;
+package org.example.cafe.service;
 
+import org.example.cafe.entity.MenuItem;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-@Repository
+@Service
 public class MenuItemCRUD {
     public void createMenuItem(Session session) {
         Transaction transaction = session.beginTransaction();

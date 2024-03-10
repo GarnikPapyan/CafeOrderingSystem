@@ -1,13 +1,14 @@
-package org.example.cafe;
+package org.example.cafe.service;
 
+import org.example.cafe.entity.Order;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-@Repository
+@Service
 public class OrderCRUD {
     public void createOrder(Session session) {
         Transaction transaction = session.beginTransaction();

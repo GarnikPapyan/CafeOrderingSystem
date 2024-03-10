@@ -1,13 +1,16 @@
-package org.example.cafe;
+package org.example.cafe.service;
 
+import org.example.cafe.entity.OrderItem;
+import org.example.cafe.entity.Billing;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
+@Service
 public class BillingService {
 
     public void generateBill(Session session) {

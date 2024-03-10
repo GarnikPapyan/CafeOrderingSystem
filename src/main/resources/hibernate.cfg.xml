@@ -24,10 +24,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mention annotated class packages -->
-        <mapping class="org.example.cafe.MenuItem"/>
-        <mapping class="org.example.cafe.OrderItem"/>
-        <mapping class="org.example.cafe.Order"/>
-        <mapping class="org.example.cafe.Billing"/>
+        <mapping class="org.example.cafe.entity.MenuItem"/>
+        <mapping class="org.example.cafe.entity.OrderItem"/>
+        <mapping class="org.example.cafe.entity.Order"/>
+        <mapping class="org.example.cafe.entity.Billing"/>
 
 
     </session-factory>
