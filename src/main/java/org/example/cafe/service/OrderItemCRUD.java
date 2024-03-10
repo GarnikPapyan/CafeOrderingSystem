@@ -19,7 +19,7 @@ public class OrderItemCRUD {
         MenuItemCRUD menuItemCRUD = new MenuItemCRUD();
         menuItemCRUD.readMenuItem(session);
         System.out.println();
-        System.out.println("Enter Menu Id ");
+        System.out.println("Enter Menu item Id ");
         while (!out){
             try {
                 Long item_id = scanner.nextLong();
